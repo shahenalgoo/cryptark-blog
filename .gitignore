@@ -40,3 +40,4 @@ next-env.d.ts
 # vscode
 .vscode/*
 !.vscode/extensions.json
+packages/blog-starter-kit/themes/enterprise/.env.example

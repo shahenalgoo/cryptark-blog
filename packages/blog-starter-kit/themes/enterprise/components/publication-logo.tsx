@@ -1,5 +1,6 @@
-import { resizeImage } from '@starter-kit/utils/image';
 import Link from 'next/link';
+import Image from 'next/image';
+import { resizeImage } from '@starter-kit/utils/image';
 import { useAppContext } from './contexts/appContext';
 import { PublicationFragment } from '../generated/graphql';
 
@@ -23,18 +24,22 @@ export const PublicationLogo = ({ isSidebar }: { isSidebar?: boolean }) => {
 			>
 				{PUBLICATION_LOGO ? (
 					<>
-						<img
-							className="block w-32 shrink-0 md:w-40"
+						<Image
+							src={PUBLICATION_LOGO}
+							width={80}
+							height={80}
 							alt={publication.title}
-							src={resizeImage(PUBLICATION_LOGO, { w: 320, h: 80 })}
+							className="block w-10 shrink-0 md:w-10"
 						/>
-						<span className="text-2xl font-semibold text-white md:text-3xl">Blog</span>
+						<div>
+							<span className="block text-2xl font-semibold text-white md:text-xs">{publication.title}</span>
+							<span className="block text-2xl font-semibold text-white md:text-2xl uppercase">Blog</span>
+						</div>
 					</>
 				) : (
 					<span
-						className={`block text-2xl font-semibold ${
-							isSidebar ? 'text-black dark:text-white' : 'text-white md:text-4xl'
-						}`}
+						className={`block text-2xl font-semibold ${isSidebar ? 'text-black dark:text-white' : 'text-white md:text-4xl'
+							}`}
 					>
 						{publication.title}
 					</span>
