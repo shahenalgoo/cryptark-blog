@@ -16,7 +16,7 @@ export const PublicationLogo = ({ isSidebar }: { isSidebar?: boolean }) => {
 	const PUBLICATION_LOGO = getPublicationLogo(publication, isSidebar);
 
 	return (
-		<h1 className="relative w-full">
+		<h1 className="relative">
 			<Link
 				href={'/'}
 				aria-label={`${publication.title} blog home page`}
@@ -31,9 +31,9 @@ export const PublicationLogo = ({ isSidebar }: { isSidebar?: boolean }) => {
 							alt={publication.title}
 							className="block w-10 shrink-0 md:w-10"
 						/>
-						<div>
-							<span className="block text-2xl font-semibold text-white md:text-xs">{publication.title}</span>
-							<span className="block text-2xl font-semibold text-white md:text-2xl uppercase">Blog</span>
+						<div className='leading-none'>
+							<span className="block !leading-none text-2xl font-semibold dark:text-white md:text-xs">{publication.title}</span>
+							<span className="block !leading-none text-2xl font-semibold dark:text-white md:text-2xl uppercase">Blog</span>
 						</div>
 					</>
 				) : (
