@@ -16,7 +16,7 @@ import { ArticleSVG, ChevronDownSVG } from '../components/icons';
 import { Layout } from '../components/layout';
 import { MorePosts } from '../components/more-posts';
 import { Navbar } from '../components/navbar';
-import { SecondaryPost } from '../components/secondary-post';
+import { SecondaryPost } from '../components/posts/secondary-post';
 import {
 	MorePostsByPublicationDocument,
 	MorePostsByPublicationQuery,
@@ -122,7 +122,7 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 				</Head>
 				<Header />
 
-				<div className='container space-y-10'>
+				<div className='container space-y-10 pb-10'>
 					{/* <Navbar /> */}
 
 					{allPosts.length === 0 && (
@@ -142,18 +142,19 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 						<div className="col-span-1">
 							{firstPost && (
 								<HeroPost
-									title={firstPost.title}
-									coverImage={firstPost.coverImage?.url || DEFAULT_COVER}
-									date={firstPost.publishedAt}
-									slug={firstPost.slug}
-									excerpt={firstPost.brief.slice(0, 200)}
+									prop={firstPost}
+								// title={firstPost.title}
+								// coverImage={firstPost.coverImage?.url || DEFAULT_COVER}
+								// date={firstPost.publishedAt}
+								// slug={firstPost.slug}
+								// excerpt={firstPost.brief.slice(0, 200)}
 								/>
 							)}
 						</div>
 						<div className="col-span-1 flex flex-col gap-6">{secondaryPosts}</div>
 					</div>
 
-					{allPosts.length > 0 && (
+					{/* {allPosts.length > 0 && (
 						<div className="bg-primary-50 grid grid-cols-4 rounded-lg px-5 py-5 dark:bg-neutral-900 md:py-10">
 							<div className="col-span-full md:col-span-2 md:col-start-2">
 								<h2 className="text-primary-600 dark:text-primary-500 mb-5 text-center text-lg font-semibold">
@@ -162,9 +163,9 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 								<SubscribeForm />
 							</div>
 						</div>
-					)}
+					)} */}
 
-					{morePosts.length > 0 && (
+					{/* {morePosts.length > 0 && (
 						<>
 							<MorePosts context="home" posts={morePosts} />
 							{!loadedMore && pageInfo.hasNextPage && pageInfo.endCursor && (
@@ -181,10 +182,10 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 								<Waypoint onEnter={loadMore} bottomOffset={'10%'} />
 							)}
 						</>
-					)}
+					)} */}
 				</div>
 
-				<Footer />
+				{/* <Footer /> */}
 			</Layout>
 		</AppProvider>
 	);

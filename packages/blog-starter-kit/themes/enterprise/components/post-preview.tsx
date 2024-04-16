@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { User } from '../generated/graphql';
 import { DEFAULT_COVER } from '../utils/const';
 import { CoverImage } from './cover-image';
-import { DateFormatter } from './date-formatter';
+import { DateFormatter } from './misc/date-formatter';
 
 type Author = Pick<User, 'name' | 'profilePicture'>;
 
