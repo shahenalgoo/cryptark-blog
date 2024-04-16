@@ -1,13 +1,18 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { useState } from 'react';
 import { PublicationNavbarItem } from '../generated/graphql';
-import { Button } from './button';
+// import { Button } from './button';
 import { Container } from './container';
 import { useAppContext } from './contexts/appContext';
 import HamburgerSVG from './icons/svgs/HamburgerSVG';
 import { PublicationLogo } from './publication-logo';
 import PublicationSidebar from './sidebar';
 import { ModeToggle } from './misc/mode-toggle';
+import { Search } from './searchbar';
+import SearchToggle from './search/search-toggle';
+import { Button } from './ui/button';
+import { PiList } from 'react-icons/pi';
+import Sidebar from './sidebar/sidebar';
 
 function hasUrl(
 	navbarItem: PublicationNavbarItem,
@@ -78,10 +83,17 @@ export const Header = () => {
 	);
 
 	return (
-		<header className='fixed top-0 left-0 z-50 w-full h-20 border-b border-border bg-background flex items-center'>
-			<div className='container flex justify-between'>
+		<header className='fixed top-0 left-0 z-50 w-full h-16 border-b border-border backdrop-blur-sm bg-background/80 flex items-center'>
+			<div className='container flex justify-between gap-6'>
+				{/* <Sidebar /> */}
+
 				<PublicationLogo />
-				<ModeToggle />
+				{/* <Search /> */}
+
+				<div className='flex items-center gap-2'>
+					<SearchToggle />
+					<ModeToggle />
+				</div>
 			</div>
 		</header>
 	)

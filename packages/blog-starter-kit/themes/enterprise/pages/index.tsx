@@ -11,7 +11,7 @@ import { Container } from '../components/container';
 import { AppProvider } from '../components/contexts/appContext';
 import { Footer } from '../components/footer';
 import { Header } from '../components/header';
-import { HeroPost } from '../components/hero-post';
+import { HeroPost } from '../components/posts/hero-post';
 import { ArticleSVG, ChevronDownSVG } from '../components/icons';
 import { Layout } from '../components/layout';
 import { MorePosts } from '../components/more-posts';
@@ -121,8 +121,9 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 					/>
 				</Head>
 				<Header />
-				<Container className="flex flex-col items-stretch gap-10 px-5 pb-10 pt-20">
-					<Navbar />
+
+				<div className='container space-y-10'>
+					{/* <Navbar /> */}
 
 					{allPosts.length === 0 && (
 						<div className="grid grid-cols-1 py-20 lg:grid-cols-3">
@@ -145,7 +146,7 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 									coverImage={firstPost.coverImage?.url || DEFAULT_COVER}
 									date={firstPost.publishedAt}
 									slug={firstPost.slug}
-									excerpt={firstPost.brief}
+									excerpt={firstPost.brief.slice(0, 200)}
 								/>
 							)}
 						</div>
@@ -181,7 +182,8 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 							)}
 						</>
 					)}
-				</Container>
+				</div>
+
 				<Footer />
 			</Layout>
 		</AppProvider>
