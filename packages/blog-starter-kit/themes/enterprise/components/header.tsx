@@ -7,7 +7,7 @@ import { useAppContext } from './contexts/appContext';
 import HamburgerSVG from './icons/svgs/HamburgerSVG';
 import { PublicationLogo } from './publication-logo';
 import PublicationSidebar from './sidebar';
-import { ModeToggle } from './misc/mode-toggle';
+import { ModeToggle } from './utils/mode-toggle';
 import { Search } from './searchbar';
 import SearchToggle from './search/search-toggle';
 import { Button } from './ui/button';

@@ -2,7 +2,7 @@ import { resizeImage } from '@starter-kit/utils/image';
 import { PostFullFragment, User } from '../generated/graphql';
 import { Avatar } from './avatar';
 import { CoverImage } from './cover-image';
-import { DateFormatter } from './misc/date-formatter';
+import { DateFormatter } from './utils/date-formatter';
 import CoAuthorsModal from './co-authors-modal';
 import { ReadTimeInMinutes } from './post-read-time-in-minutes';
 import { PostTitle } from './post-title';

@@ -2,7 +2,7 @@ import { resizeImage } from '@starter-kit/utils/image';
 import Link from 'next/link';
 import { DEFAULT_COVER } from '../../utils/const';
 import { CoverImage } from '../cover-image';
-import { DateFormatter } from '../misc/date-formatter';
+import { DateFormatter } from '../utils/date-formatter';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../ui/card';
 import Image from 'next/image';
 import { tr } from 'date-fns/locale';

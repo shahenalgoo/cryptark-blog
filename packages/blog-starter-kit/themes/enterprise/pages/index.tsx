@@ -71,11 +71,12 @@ export default function Index({ publication, initialAllPosts, initialPageInfo }:
 		return (
 			<SecondaryPost
 				key={post.id}
-				title={post.title}
-				coverImage={post.coverImage?.url || DEFAULT_COVER}
-				date={post.publishedAt}
-				slug={post.slug}
-				excerpt={post.brief}
+				prop={post}
+			// title={post.title}
+			// coverImage={post.coverImage?.url || DEFAULT_COVER}
+			// date={post.publishedAt}
+			// slug={post.slug}
+			// excerpt={post.brief}
 			/>
 		);
 	});
